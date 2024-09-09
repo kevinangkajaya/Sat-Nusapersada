@@ -1,0 +1,191 @@
+{
+  "params": [
+    {
+      "keyword": "",
+      "dates":[
+        {
+          "date":"2024-08-01"
+        },
+        {
+          "date":"2024-08-02"
+        },
+        {
+          "date":"2024-08-03"
+        }
+      ] 
+    }
+  ],
+  "data": [
+    {
+      "date":"2024-08-01",
+      "rows": [
+        {
+          "time": 1,
+          "tatal": 100
+        },
+        {
+          "time": 2,
+          "tatal": 100
+        },
+        {
+          "time": 3,
+          "tatal": 100
+        },
+        {
+          "time": 4,
+          "tatal": 100
+        },
+        {
+          "time": 5,
+          "tatal": 100
+        },
+        {
+          "time": 6,
+          "tatal": 100
+        },
+        {
+          "time": 7,
+          "tatal": 100
+        },
+        {
+          "time": 8,
+          "tatal": 100
+        },
+        {
+          "time": 9,
+          "tatal": 100
+        },
+        {
+          "time": 10,
+          "tatal": 100
+        },
+        {
+          "time": 11,
+          "tatal": 100
+        },
+        {
+          "time": 12,
+          "tatal": 100
+        },
+        {
+          "time": 13,
+          "tatal": 100
+        }
+      ]
+    },
+    {
+      "date":"2024-08-02",
+      "rows": [
+        {
+          "time": 1,
+          "tatal": 100
+        },
+        {
+          "time": 2,
+          "tatal": 100
+        },
+        {
+          "time": 3,
+          "tatal": 100
+        },
+        {
+          "time": 4,
+          "tatal": 100
+        },
+        {
+          "time": 5,
+          "tatal": 100
+        },
+        {
+          "time": 6,
+          "tatal": 100
+        },
+        {
+          "time": 7,
+          "tatal": 100
+        },
+        {
+          "time": 8,
+          "tatal": 100
+        },
+        {
+          "time": 9,
+          "tatal": 100
+        },
+        {
+          "time": 10,
+          "tatal": 100
+        },
+        {
+          "time": 11,
+          "tatal": 100
+        },
+        {
+          "time": 12,
+          "tatal": 100
+        },
+        {
+          "time": 13,
+          "tatal": 100
+        }
+      ]
+    },
+    {
+      "date":"2024-08-03",
+      "rows": [
+        {
+          "time": 1,
+          "tatal": 100
+        },
+        {
+          "time": 2,
+          "tatal": 100
+        },
+        {
+          "time": 3,
+          "tatal": 100
+        },
+        {
+          "time": 4,
+          "tatal": 100
+        },
+        {
+          "time": 5,
+          "tatal": 100
+        },
+        {
+          "time": 6,
+          "tatal": 100
+        },
+        {
+          "time": 7,
+          "tatal": 100
+        },
+        {
+          "time": 8,
+          "tatal": 100
+        },
+        {
+          "time": 9,
+          "tatal": 100
+        },
+        {
+          "time": 10,
+          "tatal": 100
+        },
+        {
+          "time": 11,
+          "tatal": 100
+        },
+        {
+          "time": 12,
+          "tatal": 100
+        },
+        {
+          "time": 13,
+          "tatal": 100
+        }
+      ]
+    }
+  ]
+}

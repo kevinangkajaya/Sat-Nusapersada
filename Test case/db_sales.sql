@@ -1,0 +1,111 @@
+/*
+SQLyog Community v13.1.9 (64 bit)
+MySQL - 10.1.38-MariaDB : Database - cora_reborn_test_case
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`cora_reborn_test_case` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `cora_reborn_test_case`;
+
+/*Table structure for table `customers` */
+
+DROP TABLE IF EXISTS `customers`;
+
+CREATE TABLE `customers` (
+  `CUSTOMER_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `CUSTOMER_NAME` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`CUSTOMER_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+/*Data for the table `customers` */
+
+insert  into `customers`(`CUSTOMER_ID`,`CUSTOMER_NAME`) values 
+(1,'CUSTOMER A'),
+(2,'CUSTOMER B'),
+(3,'CUSTOMER C'),
+(4,'CUSTOMER D'),
+(5,'CUSTOMER E'),
+(6,'CUSTOMER F');
+
+/*Table structure for table `products` */
+
+DROP TABLE IF EXISTS `products`;
+
+CREATE TABLE `products` (
+  `PRODUCT_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `PRODUCT_CODE` varchar(15) DEFAULT NULL,
+  `PRODUCT_NAME` varchar(250) DEFAULT NULL,
+  `PRODUCT_PRICE` float DEFAULT NULL,
+  `PRODUCT_STATUS` varchar(11) DEFAULT '0',
+  `PRODUCT_STOCK` int(11) DEFAULT '0',
+  PRIMARY KEY (`PRODUCT_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+/*Data for the table `products` */
+
+insert  into `products`(`PRODUCT_ID`,`PRODUCT_CODE`,`PRODUCT_NAME`,`PRODUCT_PRICE`,`PRODUCT_STATUS`,`PRODUCT_STOCK`) values 
+(1,'PRD0000000001','NASI GORENG',13000,'Active',50),
+(2,'PRD0000000002','BAKMI AYAM',12000,'Active',200),
+(3,'PRD0000000003','NASI PADANG',17000,'Active',300),
+(4,'PRD0000000004','AYAM PENYET',18000,'Active',400),
+(5,'PRD0000000005','PECEL AYAM',22000,'Active',120),
+(6,'PRD0000000006','PECEL BEBEK',30000,'Active',130),
+(7,'PRD0000000007','PECEL LELE',18000,'Active',140),
+(8,'PRD0000000008','JAGUNG BAKAR',7000,'Active',150),
+(9,'PRD0000000009','TEH HANGAT',5000,'Active',160),
+(10,'PRD0000000010','JAHE HANGAT',8000,'Active',170),
+(11,'PRD0000000011','AIR MINERAL MERK A',4000,'Active',180),
+(12,'PRD0000000012','KOPI HITAM',3000,'Active',190),
+(13,'PRD0000000013','TEH HUJAU',9000,'hold',220),
+(14,'PRD0000000014','TELUR REBUS',4000,'hold',0),
+(15,'PRD0000000015','KAMBING GULING',120000,'hold',3);
+
+/*Table structure for table `sale_items` */
+
+DROP TABLE IF EXISTS `sale_items`;
+
+CREATE TABLE `sale_items` (
+  `ITEM_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `SALE_ID` int(11) DEFAULT NULL,
+  `PRODUCT_ID` int(11) DEFAULT NULL,
+  `PRODUCT_PRICE` float DEFAULT NULL,
+  `ITEM_QTY` int(11) DEFAULT '0',
+  `IS_VERIFY` int(11) DEFAULT '0',
+  PRIMARY KEY (`ITEM_ID`),
+  KEY `SALE_ID` (`SALE_ID`),
+  KEY `PRODUCT_ID` (`PRODUCT_ID`),
+  CONSTRAINT `sale_items_ibfk_1` FOREIGN KEY (`SALE_ID`) REFERENCES `sales` (`SALE_ID`),
+  CONSTRAINT `sale_items_ibfk_2` FOREIGN KEY (`PRODUCT_ID`) REFERENCES `products` (`PRODUCT_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `sale_items` */
+
+/*Table structure for table `sales` */
+
+DROP TABLE IF EXISTS `sales`;
+
+CREATE TABLE `sales` (
+  `SALE_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `SALE_DATE` datetime DEFAULT NULL,
+  `CUSTOMER_ID` int(11) DEFAULT NULL,
+  `SALE_ITEMS_TOTAL` int(11) DEFAULT '0',
+  PRIMARY KEY (`SALE_ID`),
+  KEY `CUSTOMER_ID` (`CUSTOMER_ID`),
+  CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`CUSTOMER_ID`) REFERENCES `customers` (`CUSTOMER_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `sales` */
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
